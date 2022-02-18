@@ -1,0 +1,31 @@
+function data = getSurfaceData1Through13()
+
+splitDir1 = "GTLED-";
+splitDir2 = "--1-1";
+time = [1:3600];
+for i = 1:13
+
+   
+if i == 11
+continue;
+end
+
+trialDir = strcat(splitDir1, num2str(i), splitDir2);
+matlabCSVFile = strcat(trialDir, "\matlabCurrentTrial.csv");
+hoboCSVFile = strcat(trialDir, "\hoboCleanedAndConvertedData.csv");
+
+[voltage, current, power, time, t1, t2, t3] = readMatlabData(matlabCSVFile);
+[hVoltage, hCurrent, hPower, hPowerFactor, hTime] = readHoboData(hoboCSVFile);
+
+plot(time, );
+hold on
+
+%modify script here. replace appended variable to get what ever you are
+%trying to see graphed
+
+
+
+end
+hold off
+
+end
