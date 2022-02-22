@@ -5,6 +5,7 @@ These scripts are used to synchronize and automate the data capture of the follo
 |-----------------------------|------------------------------|--------------------------|
 |![image](https://user-images.githubusercontent.com/74911365/155068263-7cc308d9-5383-4516-bbc9-e0cdb2c4ff5f.png)|![image](https://user-images.githubusercontent.com/74911365/155068285-77a502b7-f4fe-484a-b487-182e36c2d0b3.png)|![image](https://user-images.githubusercontent.com/74911365/155068293-aa8d9dd7-a14e-47e9-bdad-b2b815cf4150.png)
 
+The results are graphed using MATLAB:
 <img width="959" alt="plotData" src="https://user-images.githubusercontent.com/74911365/155067264-40f725a8-dd9f-4241-a1a6-a40f8e8b503c.png">
 
 
