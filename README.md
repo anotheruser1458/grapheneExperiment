@@ -1,5 +1,5 @@
 # Graphene Experiment
-These scripts are used to automate the data capture of the following instruments:
+These scripts are used to synchronize and automate the data capture of the following instruments:
 
 |NI cDAQ-9185 (Thermal Couple)|BK Precision 9803 Power Supply|HOBO Plug Load Data Logger|
 |-----------------------------|------------------------------|--------------------------|
