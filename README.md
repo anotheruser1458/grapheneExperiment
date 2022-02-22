@@ -18,13 +18,13 @@ The results are graphed using MATLAB:
 <img width="959" alt="plotData" src="https://user-images.githubusercontent.com/74911365/155067264-40f725a8-dd9f-4241-a1a6-a40f8e8b503c.png">
 
 
-## Execute Experiment
+# Execute Experiment
 The main project script executeExperiment.m is called at the beginning of every experiment. The parameters are the trialName and the desired length in seconds of the experiment.
 
 <em><strong>executeExperiment.m</strong></em> 
 <br>
 
-### Initialization
+# Initialization
 
 Function declared and reminder to launch the HOBO data logger is displayed. This is necessary because the HOBO logger does not have a direct matlab interface and will run on it's own thread for the duration of each experiment. The data is cleaned and combined with the rest of the instrument data later on via python scripts.
 
@@ -63,7 +63,7 @@ Turn on the power supply, which turns on the bulb for the experiment. After mult
     pause(0.992);
 ```
 
-### Main Loop
+# Main Loop
 Main loop for capturing data. Each iteration takes 1 second to complete and iterates the number of times that were intiaially passed into the main function. Data is queried from the <strong>d</strong> object which pulls it from the running Ni-9214 instrument thread. tempData is a matrix and the temperatures of each thermal couple (these experiments used 3) are stored in their own variables: t1, t2, t3. Voltage, current, and power readings are also pulled from the powersupply and will later be used to compare with the HOBO data logs.
 
 ```matlab
@@ -80,7 +80,7 @@ Main loop for capturing data. Each iteration takes 1 second to complete and iter
 
 ```
 
-### RAM Limitations
+# RAM Limitations
 The average experiment length was approximately 3600 seconds (one hour). In anticipation of limited volatile memory becoming an issue for the amount of data samples required for each experiment, a decision was made to instead write each iteration to a csv file instead of trying to store in in one large matrix in the MATLAB workstation. Each iteration's data is added to the data matrix. The matrix is then appended to the csv file path established earlier.
 ```matlab
         data = [ t1, t2, t3, volt, current, power, timeStamp(end)];
@@ -89,7 +89,7 @@ The average experiment length was approximately 3600 seconds (one hour). In anti
     end
 ```
 
-### Accounting For Drift
+# Accounting For Drift
 The function calls for each iteration took on average 0.1395 seconds. A 0.8605 second pause was warrented to keep each iteration one second in length. These times were based on estimates and the drift after 1000, 2000, and 5000 iterations was measured and declared small enough to be negligible for the purpose of this experiment.
 
 The loop finishes, the power supply is turned off and the thermal couple thread is stopped.
@@ -98,7 +98,7 @@ The loop finishes, the power supply is turned off and the thermal couple thread 
     stop(d);
 ```
 
-### Data Cleaning and Display
+# Data Cleaning and Display
 At this time the data is nicely stored in a csv file in the current experiment's directory. The HOBO device needs to be manually turned off and the csv data needs to be exported to the current experiment directory. Another pause and message is displayed instructing the operator what to do. 
 ```matlab
     disp("Export hobo csv data to the current trial directory, name it 'hoboCurrentTrial.csv'")
@@ -127,7 +127,7 @@ Finally plotData() is called on the experiment directory.
 end
 ```
 
-### Displaying Data
+# Displaying Data
 There are many scripts that will display data in various ways. They all rely heavily on the project structure of having the data files named correctly in their correct experiment directories. The main script is <strong>plotData()</strong> which is called at the end of each experiment. It is used to display all data from each experiment.
 
 <img width="959" alt="plotData" src="https://user-images.githubusercontent.com/74911365/155067264-40f725a8-dd9f-4241-a1a6-a40f8e8b503c.png">
