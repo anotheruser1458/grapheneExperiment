@@ -111,10 +111,10 @@ end
 ```
 
 ### Displaying Data
-There are many scripts that will display data in various ways. They all rely heavily on the project structure of having the data files named correctly in their correct experiment directories. The main script is plotData() which is called at the end of each experiment. It is used to display all data from each experiment.
+There are many scripts that will display data in various ways. They all rely heavily on the project structure of having the data files named correctly in their correct experiment directories. The main script is <strong>plotData()</strong> which is called at the end of each experiment. It is used to display all data from each experiment.
 
 
 
-plotData() is made up of many submodules. Each submodule used the directory and naming conventions described earlier to read csv data into matlab matrixes, and plot the data on plots and subplots. All plot functions are very similar because they all use the same suite of submodules, but are different because they display the data slightly different, giving emphasis on individual parts of the experiment.
+<strong>plotData()</strong> is made up of many submodules. Each submodule used the directory and naming conventions described earlier to read csv data into matlab matrixes, and plot the data on plots and subplots. All plot functions are very similar because they all use the same suite of submodules, but are different because they display the data slightly different, giving emphasis on individual parts of the experiment.
 
 
