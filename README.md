@@ -88,5 +88,21 @@ At this time the data is nicely stored in a csv file in the current experiment's
     pause;
 ```
 
-Once properly exported, the python scripts <em><strong>cleanHoboData.py</strong></em> and <em><strong>convertHoboData.py</strong></em> will format the data so MATLAB can easily read it into a matrix. The version of MATLAB installed on the computers that were running the script would not read csv file data if it was delimited by anything other than a comma. The HOBO data logger exported csv data with a space delimiter, which required a python script to adjust this. MATLAB modules were created for the sole purpose of calling python python scripts, which allowed the matlab script to handle all the logic itself.
+Once properly exported, the python scripts <em><strong>cleanHoboData.py</strong></em> and <em><strong>convertHoboData.py</strong></em> will format the data so MATLAB can easily read it into a matrix. The version of MATLAB installed on the computers that were running the script would not read csv file data if it was delimited by anything other than a comma. The HOBO data logger exported csv data with a space delimiter, which required a python script to adjust this. MATLAB modules were created for the sole purpose of calling python python scripts.
+
+```matlab
+    % clean and convert hobo data
+    hoboCSVInputPath = strcat(BASE_DIR, "hoboCurrentTrial.csv");
+    hoboCleanedDataPath = callPythonClean(hoboCSVInputPath, strcat(BASE_DIR, "hoboCleanedData.csv"));
+    hoboCleanedAndConvertedPath = callPythonConversion(hoboCleanedDataPath, strcat(BASE_DIR, "hoboCleanedAndConvertedData.csv"));
+```
+
+Meta data was recorded for each trial and added as a text file to each experiment directory.
+```matlab
+    % take stats of trial
+    trialStatsFilePath = strcat(BASE_DIR, "trialStats.txt");
+    callPythonWriteStats(trialStatsFilePath, string(length));
+```
+
+
 
