@@ -1,11 +1,11 @@
 - [Graphene Experiment](#graphene-experiment)
-  * [Execute Experiment](#execute-experiment)
-    + [Initialization](#initialization)
-    + [Main Loop](#main-loop)
-    + [RAM Limitations](#ram-limitations)
-    + [Accounting For Drift](#accounting-for-drift)
-    + [Data Cleaning and Display](#data-cleaning-and-display)
-    + [Displaying Data](#displaying-data)
+- [Execute Experiment](#execute-experiment)
+- [Initialization](#initialization)
+- [Main Loop](#main-loop)
+- [RAM Limitations](#ram-limitations)
+- [Accounting For Drift](#accounting-for-drift)
+- [Data Cleaning and Display](#data-cleaning-and-display)
+- [Displaying Data](#displaying-data)
 
 # Graphene Experiment
 These scripts are used to synchronize and automate the data capture of the following instruments:
