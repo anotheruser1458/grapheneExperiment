@@ -82,4 +82,4 @@ The loop finishes, the power supply is turned off and the thermal couple thread 
 ```
 
 ### Data Cleaning and Display
-
+At this time the data is nicely stored in a csv file in the current experiment's directory. 
