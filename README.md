@@ -2,8 +2,9 @@
 These scripts are used to automate the data capture of the NI-9214 C Series Temperature input module https://www.ni.com/en-us/shop/hardware/products/c-series-temperature-input-module.html?modelId=122166 the BK Precision 9803 Power Supply https://www.bkprecision.com/products/power-supplies/9803-programmable-ac-power-source-750-va.html and the HOBO plug load data logger https://www.onsetcomp.com/products/data-loggers/ux120-018/
 
 ## Execute Experiment
-The main project script is <em><i>executeExperiment.m</i></em>, which is called at the beginning of every experiment. The parameters are the trialName and the desired length in seconds of the experiment.
+The main project script executeExperiment.m is called at the beginning of every experiment. The parameters are the trialName and the desired length in seconds of the experiment.
 
+<em><i>executeExperiment.m</i></em>
 Function declared and reminder to launch the HOBO data logger is displayed. This is necessary because the HOBO logger does not have a direct matlab interface and will run on it's own thread for the duration of each experiment. The data is cleaned and combined with the rest of the instrument data later on via python scripts.
 
 ```matlab
