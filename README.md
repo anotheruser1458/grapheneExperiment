@@ -60,6 +60,12 @@ Main loop for capturing data. Each iteration takes 1 second to complete and iter
         volt = writeread(v, "MEAS:VOLT?");
         current = writeread(v, "MEAS:CURR?");
         power = writeread(v, "MEAS:POWer?");
+
+```
+
+### RAM Limitations
+The average experiment length was approximately 3600 seconds (one hour). In anticipation of limited volatile memory becoming an issue for the amount of data samples required for each experiment, a decision was made to instead write each iteration to a csv file. Each iteration's data is added to the data matrix. The matrix is then appended to the csv file path established earlier.
+```matlab
         data = [ t1, t2, t3, volt, current, power, timeStamp(end)];
         writematrix(data, matlabCSVPath, "WriteMode", "append");
         pause(0.8605);
@@ -67,6 +73,13 @@ Main loop for capturing data. Each iteration takes 1 second to complete and iter
 ```
 
 ### Accounting For Drift
-The function calls for each iteration took on average 0.1395 seconds. A 0.8605 second pause was warrented to keep each iteration one second in length. These times were based on estimates and the drift after 1000, 2000, and 5000 iterations were so small that it was considered negligible for the purpose of this experiment.
+The function calls for each iteration took on average 0.1395 seconds. A 0.8605 second pause was warrented to keep each iteration one second in length. These times were based on estimates and the drift after 1000, 2000, and 5000 iterations was measured and declared small enough to be negligible for the purpose of this experiment.
 
+The loop finishes, the power supply is turned off and the thermal couple thread is stopped.
+```matlab
+    write(v, "OUTP 0");
+    stop(d);
+```
+
+### Data Cleaning and Display
 
