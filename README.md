@@ -6,6 +6,9 @@ The main project script executeExperiment.m is called at the beginning of every 
 
 <em><strong>executeExperiment.m</strong></em> 
 <br>
+
+### Initialization
+
 Function declared and reminder to launch the HOBO data logger is displayed. This is necessary because the HOBO logger does not have a direct matlab interface and will run on it's own thread for the duration of each experiment. The data is cleaned and combined with the rest of the instrument data later on via python scripts.
 
 ```matlab
@@ -43,7 +46,9 @@ Turn on the power supply, which turns on the bulb for the experiment. After mult
     pause(0.992);
 ```
 
+### Main Loop
 Main loop for capturing data. Each iteration takes 1 second to complete and iterates the number of times that were intiaially passed into the main function. Data is queried from the <strong>d</strong> object which pulls it from the running Ni-9214 instrument thread. tempData is a matrix and the temperatures of each thermal couple (these experiments used 3) are stored in their own variables: t1, t2, t3. Voltage, current, and power readings are also pulled from the powersupply and will later be used to compare with the HOBO data logs.
+
 ```matlab
     for c = 1:length
         [tempData, timeStamp, triggerTime] = read(d, "all", "OutputFormat","Matrix");
@@ -60,3 +65,8 @@ Main loop for capturing data. Each iteration takes 1 second to complete and iter
         pause(0.8605);
     end
 ```
+
+### Accounting For Drift
+The function calls for each iteration took on average 0.1395 seconds. A 0.8605 second pause was warrented to keep each iteration one second in length. These times were based on estimates and the drift after 1000, 2000, and 5000 iterations were so small that it was considered negligible for the purpose of this experiment.
+
+
