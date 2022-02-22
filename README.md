@@ -1,6 +1,9 @@
 # Graphene Experiment
 These scripts are used to automate the data capture of the NI-9214 C Series Temperature input module https://www.ni.com/en-us/shop/hardware/products/c-series-temperature-input-module.html?modelId=122166 the BK Precision 9803 Power Supply https://www.bkprecision.com/products/power-supplies/9803-programmable-ac-power-source-750-va.html and the HOBO plug load data logger https://www.onsetcomp.com/products/data-loggers/ux120-018/
 
+<img width="959" alt="plotData" src="https://user-images.githubusercontent.com/74911365/155067264-40f725a8-dd9f-4241-a1a6-a40f8e8b503c.png">
+
+
 ## Execute Experiment
 The main project script executeExperiment.m is called at the beginning of every experiment. The parameters are the trialName and the desired length in seconds of the experiment.
 
@@ -113,6 +116,7 @@ end
 ### Displaying Data
 There are many scripts that will display data in various ways. They all rely heavily on the project structure of having the data files named correctly in their correct experiment directories. The main script is <strong>plotData()</strong> which is called at the end of each experiment. It is used to display all data from each experiment.
 
+<img width="959" alt="plotData" src="https://user-images.githubusercontent.com/74911365/155067264-40f725a8-dd9f-4241-a1a6-a40f8e8b503c.png">
 
 
 <strong>plotData()</strong> is made up of many submodules. Each submodule used the directory and naming conventions described earlier to read csv data into matlab matrixes, and plot the data on plots and subplots. All plot functions are very similar because they all use the same suite of submodules, but are different because they display the data slightly different, giving emphasis on individual parts of the experiment.
