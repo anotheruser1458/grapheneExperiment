@@ -1,13 +1,9 @@
 # Graphene Experiment
 These scripts are used to synchronize and automate the data capture of the following instruments:
 
-|[NI cDAQ-9185 (Thermal Couple)](https://www.ni.com/en-us/shop/hardware/products/compactdaq-chassis.html)|BK Precision 9803 Power Supply|HOBO Plug Load Data Logger|
+|[NI cDAQ-9185 (Thermal Couple)](https://www.ni.com/en-us/shop/hardware/products/compactdaq-chassis.html)|[BK Precision 9803 Power Supply](https://www.bkprecision.com/products/power-supplies/9803-programmable-ac-power-source-750-va.html)|[HOBO Plug Load Data Logger](https://www.onsetcomp.com/products/data-loggers/ux120-018/)|
 |-----------------------------|------------------------------|--------------------------|
 |![image](https://user-images.githubusercontent.com/74911365/155068263-7cc308d9-5383-4516-bbc9-e0cdb2c4ff5f.png)|![image](https://user-images.githubusercontent.com/74911365/155068285-77a502b7-f4fe-484a-b487-182e36c2d0b3.png)|![image](https://user-images.githubusercontent.com/74911365/155068293-aa8d9dd7-a14e-47e9-bdad-b2b815cf4150.png)
-
-
-
-NI cDAQ 9185 C Series Temperature input module https://www.ni.com/en-us/shop/hardware/products/compactdaq-chassis.html the BK Precision 9803 Power Supply https://www.bkprecision.com/products/power-supplies/9803-programmable-ac-power-source-750-va.html and the HOBO plug load data logger https://www.onsetcomp.com/products/data-loggers/ux120-018/
 
 <img width="959" alt="plotData" src="https://user-images.githubusercontent.com/74911365/155067264-40f725a8-dd9f-4241-a1a6-a40f8e8b503c.png">
 
