@@ -1,11 +1,3 @@
-- [Graphene Experiment](#graphene-experiment)
-- [Execute Experiment](#execute-experiment)
-- [Initialization](#initialization)
-- [Main Loop](#main-loop)
-- [RAM Limitations](#ram-limitations)
-- [Accounting For Drift](#accounting-for-drift)
-- [Data Cleaning and Display](#data-cleaning-and-display)
-- [Displaying Data](#displaying-data)
 
 # Graphene Experiment
 These scripts are used to synchronize and automate the data capture of the following instruments:
@@ -17,6 +9,14 @@ These scripts are used to synchronize and automate the data capture of the follo
 The results are graphed using MATLAB:
 <img width="959" alt="plotData" src="https://user-images.githubusercontent.com/74911365/155067264-40f725a8-dd9f-4241-a1a6-a40f8e8b503c.png">
 
+# Contents
+- [Execute Experiment](#execute-experiment)
+- [Initialization](#initialization)
+- [Main Loop](#main-loop)
+- [RAM Limitations](#ram-limitations)
+- [Accounting For Drift](#accounting-for-drift)
+- [Data Cleaning and Display](#data-cleaning-and-display)
+- [Displaying Data](#displaying-data)
 
 # Execute Experiment
 The main project script executeExperiment.m is called at the beginning of every experiment. The parameters are the trialName and the desired length in seconds of the experiment.
