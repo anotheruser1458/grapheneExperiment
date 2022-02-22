@@ -64,7 +64,7 @@ Main loop for capturing data. Each iteration takes 1 second to complete and iter
 ```
 
 ### RAM Limitations
-The average experiment length was approximately 3600 seconds (one hour). In anticipation of limited volatile memory becoming an issue for the amount of data samples required for each experiment, a decision was made to instead write each iteration to a csv file. Each iteration's data is added to the data matrix. The matrix is then appended to the csv file path established earlier.
+The average experiment length was approximately 3600 seconds (one hour). In anticipation of limited volatile memory becoming an issue for the amount of data samples required for each experiment, a decision was made to instead write each iteration to a csv file instead of trying to store in in one large matrix in the MATLAB workstation. Each iteration's data is added to the data matrix. The matrix is then appended to the csv file path established earlier.
 ```matlab
         data = [ t1, t2, t3, volt, current, power, timeStamp(end)];
         writematrix(data, matlabCSVPath, "WriteMode", "append");
