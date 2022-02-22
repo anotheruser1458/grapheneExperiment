@@ -25,3 +25,7 @@ The experiment directory is created along with other constants. BASE_DIR will se
 
 The initializeExperiment script is called, which uses MATLAB drivers/plugins to create objects associated with each instrument plugged into the computer. The important result of this script is now in the MATLAB work station <b>b</b> is the object associated with the Ni-9214 Thermal Couple and <b>v</b> is the object associated with the BK Precision 9803 Power Supply. An empty 'data' matrix is also initiated.
 
+```matlab
+    initializeExperiment;
+    data = [];
+```
